@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smily Face animation</title>
+    <link rel="stylesheet" href="smily.css">
+</head>
+<body>
+    <div class="main">
+    <div class="face">
+        <doiv class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+        </doiv>
+    </div>
+</div>
+    <script>
+        //mouse X position
+        let mouseXStartPoint = 300;
+        let mouseXEndPoint =(window.innerWidth-300);
+        let currentXPosition = 0;
+        let fracXValue = 0;
+        
+        //mouse y position
+        
+        let mouseYEndPoint =(window.innerHeight);
+        let currentYPosition = 0;
+        let fracYValue = 0;
+
+        //Range
+        let mouseXRange = mouseXEndPoint - mouseXStartPoint;
+
+        const mouseMove = (event) => {
+            // console.log(`X value = ${event.clientX} & Y value = ${event.clientY}`);
+            currentXPosition = event.clientX - mouseXStartPoint;
+            fracXValue = currentXPosition/ mouseXRange;
+            console.log("X" + fracXValue);
+            
+
+            //Y location
+            currentYPosition = event.clientY;
+            fracYValue = currentXPosition/ mouseYEndPoint;
+            console.log("Y" + fracYValue);
+        }
+  
+        // document.getElementById("eyes"){
+        //     if(fracXValue<0){
+                
+        //     }
+        // }
+        
+
+        document.querySelector('body').addEventListener('mousemove', mouseMove);
+    </script>
+
+
+
+</body>
+</html>
